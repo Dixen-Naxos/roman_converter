@@ -1,6 +1,9 @@
+import pytest
+
 from src.roman_converter import int_to_roman
+
+
 class TestRomanConverter:
-    def test_roman_to_int_for_number_one(self):
-        assert int_to_roman(1) == "I"
-
-
+    @pytest.mark.parametrize("number_to_convert, expected", [[1, "I"], [2, "II"], [3, "III"], [4, "IV"]])
+    def test_roman_to_int_for_number_one(self, number_to_convert, expected):
+        assert int_to_roman(number_to_convert) == expected
