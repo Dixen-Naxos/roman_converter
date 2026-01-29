@@ -11,7 +11,8 @@ def int_to_roman(number_to_convert: int) -> str:
             roman_accumulator += "V"
             counter -= 5
 
-        roman_accumulator += "I"
-        counter -= 1
+        if counter >= 1:
+            roman_accumulator += "I"
+            counter -= 1
 
     return roman_accumulator
