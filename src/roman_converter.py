@@ -6,4 +6,7 @@ def int_to_roman(number_to_convert: int) -> str:
             print(roman_accumulator)
             roman_accumulator = roman_accumulator.replace("IIIII", "V")
 
+        if i % 10 == 0:
+            print(roman_accumulator)
+            roman_accumulator = roman_accumulator.replace("VV", "X")
     return roman_accumulator
