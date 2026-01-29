@@ -1,12 +1,15 @@
 def int_to_roman(number_to_convert: int) -> str:
     roman_accumulator: str = ""
-    for i in range(1, number_to_convert + 1):
-        roman_accumulator += "I"
-        if i % 5 == 0:
-            print(roman_accumulator)
-            roman_accumulator = roman_accumulator.replace("IIIII", "V")
+    counter: int = number_to_convert
 
-        if i % 10 == 0:
-            print(roman_accumulator)
-            roman_accumulator = roman_accumulator.replace("VV", "X")
+    while counter > 0:
+        if counter >= 10:
+            roman_accumulator += "X"
+
+        if counter >= 5:
+            roman_accumulator += "V"
+
+        roman_accumulator += "I"
+        counter -= 1
+
     return roman_accumulator
